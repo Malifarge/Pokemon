@@ -3,7 +3,8 @@
 
 body{
   background: url(./images/fontpkmn.jpg);
-  background-size: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: white;
 }
 
