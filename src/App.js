@@ -41,7 +41,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>C<span>a</span>tch th<span>e</span>m <span>a</span>ll</h1>
+      <h1>Catch them all</h1>
       {pokemon !== null &&
       <section>
          <img src={pokemon.sprites.front_default} alt={pokemon.name} className={myClass} />
