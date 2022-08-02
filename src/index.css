@@ -27,8 +27,36 @@ section{
   height: 60vh;
 }
 
+
+
 img{
   width: 200px;
+}
+
+.newpkmn{
+  animation: newpkmn 1s;
+  color: white;
+}
+
+@keyframes newpkmn{
+  0%{opacity: 0;}
+  25%{opacity: 0.25;}
+  50%{opacity: 0.5;}
+  75%{opacity: 0.75;}
+  100%{opacity: 1;}
+}
+
+.oldpkmn{
+  animation: oldpkmn 1s;
+  color: white;
+}
+
+@keyframes oldpkmn{
+  0%{opacity: 1;}
+  25%{opacity: 0.75;}
+  50%{opacity: 0.5;}
+  75%{opacity: 0.25;}
+  100%{opacity: 0;}
 }
 
 h1{

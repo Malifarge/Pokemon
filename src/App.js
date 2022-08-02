@@ -4,15 +4,31 @@ import './index.css'
 function App() {
   
   const [pokemon,setPokemon] = useState(null)
+  const [myClass,setMyClasse] = useState("newpkmn")
 
   useEffect(()=>{
     fetchPokemons(1)
   },[]
   )
 
+  const dispation = () =>{
+    setMyClasse("oldpkmn")
+  } 
+
   useEffect(()=>{
-    pokemon!== null && console.log(pokemon.name);
+    setMyClasse("newpkmn")
   },[pokemon])
+
+  useEffect(()=>{
+   if(myClass==='oldpkmn'){
+   setTimeout(random,900)
+  }
+  },[myClass])
+
+  const random = () =>{
+    const randomID = Math.floor(Math.random()*151)+1
+    fetchPokemons(randomID)
+  }
 
   const fetchPokemons = async (ID) => {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${ID}`)
@@ -20,28 +36,26 @@ function App() {
     setPokemon(data)
   }
 
-  console.log(pokemon);
-
   return (
     <div className="App">
       <h1>C<span>a</span>tch th<span>e</span>m <span>a</span>ll</h1>
       {pokemon !== null &&
       <section>
-         <img src={pokemon.sprites.front_default} alt={pokemon.name} />
-         <h2>{pokemon.name}</h2>
-         <p>height: {pokemon.height}</p>
-         <p>Weight: {pokemon.weight}</p>
+         <img src={pokemon.sprites.front_default} alt={pokemon.name} className={myClass} />
+         <h2 className={myClass}>{pokemon.name}</h2>
+         <p >height: <span className={myClass}>{pokemon.height}</span></p>
+         <p >Weight: <span className={myClass}>{pokemon.weight}</span></p>
          <p>
           Types:
-         <ul>
+         <ul >
           {pokemon.types.map((type)=>{
-           return <li key={type.slot}>{type.type.name}</li>
+           return <li key={type.slot} className={myClass}>{type.type.name}</li>
           })}
          </ul>
          </p>
       </section>
       }
-      <button onClick={() => fetchPokemons(Math.floor(Math.random()*151)+1)}>show random Pokémon</button>
+      <button onClick={dispation}>show random Pokémon</button>
     </div>
   );
 }
