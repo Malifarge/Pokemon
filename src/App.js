@@ -20,15 +20,16 @@ function App() {
   },[pokemon])
 
   useEffect(()=>{
-   if(myClass==='oldpkmn'){
-   setTimeout(random,900)
+    const changePokemon = () =>{
+      const randomID = Math.floor(Math.random()*151)+1
+      fetchPokemons(randomID)
+    }
+   if(myClass==='oldpkmn')
+   {
+   setTimeout(()=>{changePokemon()},900)
   }
   },[myClass])
 
-  const random = () =>{
-    const randomID = Math.floor(Math.random()*151)+1
-    fetchPokemons(randomID)
-  }
 
   const fetchPokemons = async (ID) => {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${ID}`)
