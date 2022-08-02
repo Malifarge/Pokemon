@@ -37,6 +37,8 @@ function App() {
     setPokemon(data)
   }
 
+  console.log(pokemon);
+
   return (
     <div className="App">
       <h1>C<span>a</span>tch th<span>e</span>m <span>a</span>ll</h1>
