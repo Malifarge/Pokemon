@@ -24,6 +24,7 @@ section{
   border: 2px dashed white;
   padding: 30px;
   border-radius: 50px;
+  height: 60vh;
 }
 
 img{
