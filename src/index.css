@@ -22,7 +22,6 @@ p:hover{
 }
 
 .App{
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,8 +31,8 @@ p:hover{
 section{
   padding: 30px;
   border-radius: 50px;
-  height: 60vh;
   background: rgba(0, 0, 0, 0.429);
+  margin-bottom: 30px;
 }
 
 
@@ -69,8 +68,6 @@ img{
 }
 
 h1{
-  position: absolute;
-  top: 30px;
   color: black;
   text-align: center;
   text-decoration: underline 3px black;
@@ -84,8 +81,6 @@ h2{
 
 
 button{
-  position: absolute;
-  bottom: 30px;
   border-radius: 50px;
   height: 40px;
   padding: 10px;
